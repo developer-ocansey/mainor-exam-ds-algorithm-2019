@@ -249,7 +249,7 @@ public static void main(String[] args)
 
 ## Complexity of Algorithms O(N) meaning and examples
 
-Complexity of an Algorithms is the relative representation of the complexity of an algorithm.
+Complexity of an Algorithms is a measure which evaluates the order of the count of operations, performed by a given or algorithm as a function of the size of the input data.
 O(n) represents the complexity of a function that increases linearly and in direct proportion to the number of inputs. This is a good example of how Big O Notation describes the worst case scenario as the function could return the true after reading the first element or false after reading all n elements.
 
 
