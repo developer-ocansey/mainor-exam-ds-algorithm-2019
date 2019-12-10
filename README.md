@@ -1,4 +1,4 @@
-# Exam for EUAS 2019 Algorithms and data structures
+# Exam EUAS 2019 Algorithms and data structures
 
 Antonio Emmanuel Ocansey
 
@@ -16,11 +16,11 @@ Deletion (Remove) will always remove from a given position in the list.
 
 Searching (Contains) will search the list for a value.
 
-Example use cases:
+#### Example use cases:
 
 Linked list is used for the implementation of Stacks and Queues
 
-Sample Implementation
+#### Sample Implementation
 
 ```
 import java.io.*; 
@@ -76,7 +76,7 @@ public class LinkedList {
         Node currNode = list.head, prev = null; 
 
         if (currNode != null && currNode.data == key) { 
-            list.head = currNode.next; // Changed head 
+            list.head = currNode.next;
   
             System.out.println(key + " found and deleted"); 
   
@@ -106,7 +106,7 @@ public class LinkedList {
         Node currNode = list.head, prev = null; 
   
         if (index == 0 && currNode != null) { 
-            list.head = currNode.next; // Changed head 
+            list.head = currNode.next;
   
             System.out.println(index + " position element deleted"); 
 
@@ -140,7 +140,6 @@ public class LinkedList {
   
     public static void main(String[] args) 
     { 
-        /* Start with the empty list. */
         LinkedList list = new LinkedList(); 
   
         // Insert the values 
@@ -181,14 +180,88 @@ public class LinkedList {
 
         printList(list); 
     } 
+    // Source geeksforgeeks
 }
 ```
 
 ### Queue
 
-What things you need to install the software and how to install them
+A Queue is a linear structure which follows a particular order in which the operations are performed. The order is First In First Out (FIFO). 
+A good example of a queue is any queue of consumers for a resource where the consumer that came first is served first. The difference between stacks and queues is in removing. In a stack we remove the item the most recently added; in a queue, we remove the item the least recently added.
+
+````
+import java.util.*; 
+  
+class Imple  
+{  
+static class Queue  
+{  
+    static Stack<Integer> s1 = new Stack<Integer>();  
+    static Stack<Integer> s2 = new Stack<Integer>();  
+  
+    static void enQueue(int x)  
+    {  
+        while (!s1.isEmpty()) 
+        {  
+            s2.push(s1.pop());  
+        }  
+  
+        s1.push(x);  
+  
+        while (!s2.isEmpty())  
+        {  
+            s1.push(s2.pop());  
+        }  
+    }  
+  
+    static int deQueue()  
+    {  
+        if (s1.isEmpty())  
+        {  
+            System.out.println("Q is Empty");  
+            System.exit(0);  
+        }  
+  
+        int x = s1.peek();  
+        s1.pop();  
+        return x;  
+    }  
+};  
+  
+public static void main(String[] args)  
+{  
+    Queue q = new Queue();  
+    q.enQueue(1);  
+    q.enQueue(2);  
+    q.enQueue(3);  
+  
+    System.out.println(q.deQueue());  
+    System.out.println(q.deQueue()); 
+    System.out.println(q.deQueue()); 
+}  
+}  
+  
+// Source geeksforgeeks
+
+````
+
 
 
 ## Complexity of Algorithms O(N) meaning and examples
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Complexity of an Algorithms is the relative representation of the complexity of an algorithm.
+O(n) represents the complexity of a function that increases linearly and in direct proportion to the number of inputs. This is a good example of how Big O Notation describes the worst case scenario as the function could return the true after reading the first element or false after reading all n elements.
+
+
+#### Examples
+````
+public boolean containsNumber(List<Integer> numbers, int comparisonNumber) {
+  for(Integer number : numbers) {
+    if(number == comparisonNumber) {
+      return true;
+    }
+  }
+  return false;
+}
+````
+
